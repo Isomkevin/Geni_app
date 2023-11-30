@@ -8,27 +8,9 @@ app = Flask(__name__)
 def hello_world():
     return redirect("/welcome")
 
-# JSON configuration for response logic
-response_options = {
-    "": {
-        "res": "CON Welcome to Geni Loyalty program \nLog In as: \n1. Customer \n2. Shop Owner"
-    },
-    "1": {
-        "res": "CON Welcome {Customer_name} \n1. Top up \n2. My Points \n3. Opt out"
-    },
-    "1*1": {
-        "res": "CON Welcome {Customer_name} \n1. Top up \n2. My Points \n3. Opt out"
-    },
-    "2": {
-        "res": "END Your phone number is {phone_number}"
-    },
-    "1*1": {
-        "res": "END Your account number is {account_number}"
-    },
-    "default": {
-        "res": "END Invalid choice"
-    }
-}
+# Load JSON configuration for response logic from external file
+with open('response_options.json', 'r') as file:
+    response_options = json.load(file)
 
 @app.route("/welcome", methods=['GET'])
 def welcome():
