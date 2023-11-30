@@ -1,3 +1,6 @@
+from ussd_generator import ussd_menu
+
+
 def handle_ussd_request(user_input):
     response_config = ussd_menu.get(user_input, ussd_menu['default'])
     response_text = response_config['res']
