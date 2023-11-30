@@ -1,18 +1,17 @@
-from flask import Flask
+import os
+from flask import Flask, request
+import json
+from ussd_generator import ussd_menu
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
-import os
-from flask import Flask, request
-import json
-
-app = Flask(__name__)
+    return 'Hello, World! Welcome to Geni'
 
 # JSON configuration for response logic
-response_options = {
+response_options = ussd_menu
+response_options2 = {
     "": {
         "res": "CON What would you want to check \n1. My Account \n2. My phone number"
     },
