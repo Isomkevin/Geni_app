@@ -3,7 +3,7 @@ def handle_ussd_request(user_input):
     response_text = response_config['res']
 
     if '{phone_number}' in response_text:
-        response_text = response_text.format(phone_number="1234567890")  # Replace with actual phone number
+        response_text = response_text.format(phone_number=phone_number)  # Replace with actual phone number
 
     if '{account_number}' in response_text:
         account_number = "ACC1001"  # Replace with actual account number
