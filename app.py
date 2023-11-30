@@ -1,16 +1,12 @@
 import os
-from flask import Flask, request
+from flask import Flask, request, redirect
 import json
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
-
-
-
-app = Flask(__name__)
+    return redirect("/welcome")
 
 # JSON configuration for response logic
 response_options = {
