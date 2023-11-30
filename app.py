@@ -1,7 +1,5 @@
-# app.py
-
 from flask import Flask, request
-from ussd_main_app import handle_ussd_request
+from ussd_handling import handle_ussd_request
 from ussd_generator import ussd_menu
 
 app = Flask(__name__)
