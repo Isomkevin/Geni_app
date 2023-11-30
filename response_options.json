@@ -9,19 +9,19 @@
         "res": "CON Welcome {Customer_name} \n1. Top up \n2. My Points \n3. Opt out"
     },
     "1*1*1": {
-        "res": "You have {Geni_points} \n1. Mpesa"
+        "res": "CON You have {Geni_points} \n1. Mpesa"
     },
     "1*1*1*1": {
-        "res": "Input your M-pesa number \n1. Push Notification"
+        "res": "CON Input your M-pesa number \n1. Push Notification"
     },
     "1*1*1*1*1": {
         "res": "END Thank you {Customer_name} \nYou will receive notification in {Mpesa_number}"
     },
     "1*1*2": {
-        "res": "You have {Geni_points} \n1. Redeem Points \n2. Transfer Points"
+        "res": "CON You have {Geni_points} \n1. Redeem Points \n2. Transfer Points"
     },
     "1*1*3": {
-        "res": "Customer Care will reach to you for further info"
+        "res": "CON Customer Care will reach to you for further info"
     },
     "default": {
         "res": "END Invalid choice"
