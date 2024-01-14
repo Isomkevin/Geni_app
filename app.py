@@ -1,6 +1,8 @@
-import os
-from flask import Flask, request, redirect
+
 import json
+import os
+
+from flask import Flask, redirect, request
 
 app = Flask(__name__)
 
