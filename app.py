@@ -6,17 +6,19 @@ from flask import Flask, redirect, request
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return redirect("/welcome")
 
 # Load JSON configuration for response logic from external file
 with open('response_options.json', 'r') as file:
     response_options = json.load(file)
 
+
+@app.route('/')
+def hello_world():
+    return redirect("/welcome")
+
 @app.route("/welcome", methods=['GET'])
 def welcome():
-    response_text = "Hello World"
+    response_text = "<h2>Karibuni Wageni<h2>,\n <p>Welcome to the Geni App<p/>"
     return response_text
 
 @app.route("/ussd", methods=['POST'])
