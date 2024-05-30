@@ -18,7 +18,7 @@ def hello_world():
 
 @app.route("/welcome", methods=['GET'])
 def welcome():
-    response_text = "<h2>Karibuni Wageni<h2>,\n <p>Welcome to the Geni App<p/>"
+    response_text = "<h2>Karibuni Beneficiaries<h2>,\n <p>Welcome to the SustainAShare App<p/>"
     return response_text
 
 @app.route("/ussd", methods=['POST'])
@@ -27,6 +27,7 @@ def ussd():
     service_code = request.values.get("serviceCode", None)
     phone_number = request.values.get("phoneNumber", None)
     text = request.values.get("text", "default")
+    Geni_points = int(1)
 
     # Get the response configuration based on the received text
     response_config = response_options.get(text, response_options['default'])
@@ -35,6 +36,10 @@ def ussd():
     # Process response text if placeholders are present
     if '{phone_number}' in response_text:
         response_text = response_text.format(phone_number=phone_number)
+    if '{customer_name}' in response_text:
+        response_text = response_text.format(customer_name=phone_number)
+    if '{Geni_points}' in response_text:
+        response_text = response_text.format(Geni_points=Geni_points) 
     if '{account_number}' in response_text:
         # Hardcoded account number for demonstration
         account_number = "ACC1001" # Query Backend
